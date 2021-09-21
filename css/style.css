@@ -1,0 +1,79 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  background-color: rgb(226, 225, 224);
+}
+p {
+  font-size: 11px;
+}
+#title {
+  flex: auto;
+  margin: 2px 12px;
+}
+input {
+  flex: auto;
+  margin-left: 0;
+}
+.titleSearchbar {
+  display: flex;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(100, 100, 100, 0.4);
+}
+.modal {
+  width: 375px;
+  margin: 15% auto auto;
+  position: relative;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #778;
+  border-radius: 5px;
+  padding: 30px 20px;
+}
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+.card {
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "myArea myArea myArea";
+  grid-gap: 10px;
+  padding: 10px;
+}
+.card {
+  display: flex;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+.picGridCont {
+  width: 5%;
+  flex: auto;
+}
+img {
+  border-radius: 50%;
+}
+#firstTxtCont {
+  flex: auto;
+  padding-left: 10px;
+}
