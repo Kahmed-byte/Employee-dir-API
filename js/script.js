@@ -5,6 +5,8 @@ const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
 let arrowR = document.querySelector('.arrowR');
+let arrowL = document.querySelector('.arrowL');
+
 
 // fetch data from API
 async function getData() {
@@ -41,6 +43,28 @@ function displayEmployees(employeeData) {
                         <p class="address">${city}</p>
                       </div>
                     </div>`
+        // arrow functions to change modal
+    arrowR.addEventListener('click', () =>{
+                            if(index < employees.length) {
+                                index++;
+                            displayModal(index);
+                            }
+                            else if(index == employees.length) {
+                                index = 0;
+                            displayModal(index);
+                            }
+                    });
+    arrowL.addEventListener('click', () =>{
+
+                            if(index < employees.length) {
+                                index--;
+                            displayModal(index);
+                            }
+                            else if(index == employees.length) {
+                                index--;
+                            displayModal(index);
+                            }
+                    });
 
 });
 
@@ -104,10 +128,3 @@ function findSearched() {
 };
 
 // Change modal
-arrowR.addEventListener('click', () =>{
-    let index = document.querySelector(".card").getAttribute('data-index');
-        if(index < employees.length) {
-            index++;
-        displayModal(index);
-        }
-});

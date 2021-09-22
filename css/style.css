@@ -52,6 +52,10 @@ input {
   top: 5px;
   cursor: pointer;
 }
+.arrowL,
+.arrowR {
+  cursor: pointer;
+}
 .hidden {
   display: none;
 }
