@@ -4,6 +4,7 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+let arrowR = document.querySelector('.arrowR');
 
 // fetch data from API
 async function getData() {
@@ -56,13 +57,13 @@ function displayModal(index) {
     let date = new Date(dob.date);
     const modalHTML = `<img class="avatar" src="${picture.large}" />
     <div class="text-container">
-    <h2 class="name">${name.first} ${name.last}</h2>
-    <p class="email">${email}</p>
-    <p class="address">${city}</p>
-    <hr />
-    <p>${phone}</p>
-    <p class="address">${street.name}, ${state} ${postcode}</p>
-    <p>Birthday:
+        <h2 class="name">${name.first} ${name.last}</h2>
+        <p class="email">${email}</p>
+        <p class="address">${city}</p>
+        <hr />
+        <p>${phone}</p>
+        <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
+        <p>Birthday:
     ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>`;
 
@@ -101,3 +102,12 @@ function findSearched() {
         }
     });
 };
+
+// Change modal
+arrowR.addEventListener('click', () =>{
+    let index = document.querySelector(".card").getAttribute('data-index');
+        if(index < employees.length) {
+            index++;
+        displayModal(index);
+        }
+});
